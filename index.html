@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonathan Berkmann</title>
+    <meta name="description" content="Jonathan Berkmann, IT management consultant in Vienna. Tenders, portfolio steering, and the meeting point of people and technology." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/familjen-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/familjen-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="theme-color" content="#141615" />
+    <script>
+      // Dark by default. A saved choice from the toggle wins, applied before first paint.
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

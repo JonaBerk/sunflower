@@ -1,0 +1,77 @@
+/* Design tokens · jonathanberkmann.eu · see DESIGN.md */
+:root {
+  /* Colors */
+  --paper: #FAFAF7;
+  --ink: #16181A;
+  --ink-soft: #4A4D50;
+  --ink-muted: #6B6E70;
+  --line: #DCDDD8;
+  --turquoise: #00C9B7; /* graphics only, never text */
+  --sun: #FFD21F;       /* graphics only, never text */
+
+  /* Typography */
+  --font: "Familjen Grotesk", system-ui, sans-serif;
+  --fs-display: clamp(2.25rem, 1.4rem + 3vw, 3.5rem);
+  --fs-h2: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+  --fs-h3: clamp(1.25rem, 1.15rem + 0.4vw, 1.375rem);
+  --fs-body: clamp(1.0625rem, 1rem + 0.2vw, 1.125rem);
+  --fs-label: 0.875rem;
+  --lh-display: 1.05;
+  --lh-heading: 1.15;
+  --lh-body: 1.6;
+  --measure: 65ch;
+
+  /* Spacing (8px grid) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 16px;
+  --s-4: 24px;
+  --s-5: 40px;
+  --s-6: 64px;
+  --s-7: 96px;
+  --s-8: 144px;
+  --content-max: 1120px;
+  --section-gap: clamp(64px, 40px + 4vw, 96px);
+
+  /* Shape */
+  --radius: 0;
+  --hairline: 1px solid var(--line);
+  --underline: 2px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-link: 350ms;
+  --dur-reveal: 500ms;
+  --dur-spiral: 1200ms;
+
+  /* Spiral */
+  --golden-angle: 137.508deg;
+}
+
+/* Dark mode: follows the system, can be overridden via <html data-theme="light|dark"> */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #141615;
+    --ink: #ECEDE8;
+    --ink-soft: #B4B7B2;
+    --ink-muted: #8C8F8B;
+    --line: #2C2F2E;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #141615;
+  --ink: #ECEDE8;
+  --ink-soft: #B4B7B2;
+  --ink-muted: #8C8F8B;
+  --line: #2C2F2E;
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-link: 0ms;
+    --dur-reveal: 0ms;
+    --dur-spiral: 0ms;
+  }
+}

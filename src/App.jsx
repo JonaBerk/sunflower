@@ -3,6 +3,7 @@ import './App.css'
 import Spiral from './components/Spiral.jsx'
 import Section from './components/Section.jsx'
 import ThemeToggle from './components/ThemeToggle.jsx'
+import PathFlower from './components/PathFlower.jsx'
 import { site, hero, about, focus, path, work, ideas, offTheClock, contact, legal } from './content.js'
 import { articles } from './articles.js'
 import { projects } from './projects.js'
@@ -392,17 +393,7 @@ export default function App() {
         </Section>
 
         <Section id="path" number="03" label="Path" title={path.title}>
-          <ol className="timeline">
-            {path.stations.map((s) => (
-              <li key={s.org} className="timeline__row">
-                <span className="timeline__years">{s.years}</span>
-                <span>
-                  <span className="timeline__role">{s.role}</span>
-                  <span className="muted">{s.org}</span>
-                </span>
-              </li>
-            ))}
-          </ol>
+          <PathFlower stations={path.stations} />
           <dl className="facts">
             <div>
               <dt className="label">Industries</dt>

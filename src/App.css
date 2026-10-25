@@ -355,41 +355,7 @@
   margin-bottom: calc(-1 * var(--s-1));
 }
 
-/* Path */
-.timeline {
-  max-width: var(--measure);
-}
-
-.timeline__row {
-  display: grid;
-  grid-template-columns: 9rem minmax(0, 1fr);
-  gap: var(--s-4);
-  padding-block: var(--s-3);
-  border-top: var(--hairline);
-}
-
-.timeline__row:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.timeline__years {
-  color: var(--ink-muted);
-  font-variant-numeric: tabular-nums;
-}
-
-.timeline__role {
-  display: block;
-  font-weight: 500;
-}
-
-@media (max-width: 520px) {
-  .timeline__row {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--s-1);
-  }
-}
-
+/* Path · facts below the flower timeline */
 .facts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -743,4 +709,111 @@
 .groups,
 .rail {
   min-width: 0;
+}
+
+/* ---------- Path · the flower as a timeline ---------- */
+.flowerpath {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: var(--s-5);
+  margin-top: var(--s-5);
+}
+
+.flowerpath__art {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+}
+
+.flowerpath__canvas {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1;
+}
+
+.flowerpath__legend {
+  margin-top: var(--s-3);
+}
+
+.flowerpath__list {
+  display: grid;
+}
+
+.flowerpath__step {
+  position: relative;
+  display: grid;
+  gap: var(--s-1);
+  align-content: center;
+  min-height: 34vh;
+  padding-left: 32px;
+  border-top: var(--hairline);
+  opacity: 0.4;
+  transition: opacity 500ms var(--ease);
+}
+
+.flowerpath__step:first-child {
+  border-top: 0;
+}
+
+.flowerpath__step.is-past {
+  opacity: 0.65;
+}
+
+.flowerpath__step.is-active {
+  opacity: 1;
+}
+
+.flowerpath__swatch {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+.flowerpath__swatch.is-core {
+  background: var(--turquoise);
+}
+
+.flowerpath__years {
+  font-size: var(--fs-label);
+  color: var(--ink-muted);
+}
+
+.flowerpath__role {
+  font-weight: 500;
+}
+
+@media (max-width: 720px) {
+  .flowerpath {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s-3);
+  }
+
+  /* flower stays small at the top while the stations scroll by */
+  .flowerpath__art {
+    top: 64px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    padding-block: var(--s-2);
+    background: var(--paper);
+  }
+
+  .flowerpath__canvas {
+    width: 140px;
+  }
+
+  .flowerpath__legend {
+    margin-top: 0;
+  }
+
+  .flowerpath__step {
+    min-height: 28vh;
+  }
 }
